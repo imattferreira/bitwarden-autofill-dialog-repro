@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dialog Reproduction Bug</title>
+  </head>
+  <body>
+    <button>Open Dialog</button>
+    <dialog style="background-color: #faf9f9">
+      <form>
+        <div style="display: flex; flex-direction: column">
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" />
+        </div>
+        <div style="display: flex; flex-direction: column">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" />
+        </div>
+      </form>
+    </dialog>
+  </body>
+  <script>
+    const dialog = document.querySelector("dialog");
+    const button = document.querySelector("button");
+
+    button.addEventListener("click", () => {
+      dialog.showModal();
+    });
+  </script>
+</html>
